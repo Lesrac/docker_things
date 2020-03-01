@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-alpine
+    ports: 
+      - "8090:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+    user: "${UID_J}:${GID_J}"
+
+volumes:
+  jenkins-data:
